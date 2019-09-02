@@ -1,6 +1,6 @@
 const { MongoClient } = require('mongodb')
 
-const url = 'mongodb://localhost:27017';
+const url = process.env.PORT||'mongodb://localhost:27017';
 
 const connectdb = (dbName) => {
     return MongoClient.connect(url).then(client => client.db(dbName))
