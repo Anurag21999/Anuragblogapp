@@ -1,9 +1,9 @@
 const { MongoClient } = require('mongodb')
 
-const URL = process.env.MONGODB_URI||'mongodb://localhost:27017';
+// const URL = process.env.MONGODB_URI||'mongodb://localhost:27017';
 
 const connectdb = (dbName) => {
-    return MongoClient.connect(URL).then(client => client.db(dbName))
+    return MongoClient.connect(process.env.MONGODB_URI||'mongodb://localhost:27017').then(client => client.db(dbName))
   }
   
  
